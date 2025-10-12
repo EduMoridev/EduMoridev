@@ -1,6 +1,6 @@
 ## Ola, prazer sou EduMoridev
 
-- 🔭 Atualmente trabalho com 
+- 🔭 Atualmente faço apenas freelancing
 - 🌱 Aperfeiçoando meu TypeScript em Next.Js
 - 👯 Trabalhando atualmente em um projeto de tcc que no momento esta privado
 - 📫 Pode me contatar pelo email: @edu.mori@hotmail.com
