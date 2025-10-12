@@ -21,16 +21,21 @@
   <img align="center" alt="Edu-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
   <img align="right" alt="Edu-yoda" src="https://cdn.discordapp.com/attachments/795358919417397249/825430589581688872/hi.gif">
 </div>
+   
+<div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap; margin-top: 10px;">
+  <a href="https://instagram.com/edu.morishita" target="_blank">
+    <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+  </a>
 
+  <a href="https://discord.com/users/horid愛憎" target="_blank">
+    <img src="https://img.shields.io/badge/Discord-horid愛憎-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord de horid愛憎">
+  </a>
 
+  <a href="https://www.linkedin.com/in/eduardo-silva-morishita-268a89316/" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+</div>
  
-<div> 
-  <a href="https://instagram.com/edu.morishita" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
- <a href="https://discord.com/users/horid愛憎" target="_blank">
-  <img src="https://img.shields.io/badge/Discord-horid愛憎-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord de horid愛憎">
-</a> 
-  <a href="https://www.linkedin.com/in/eduardo-silva-morishita-268a89316/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
- 
-  ![Snake animation](https://github.com/rafaballerini/rafaballerini/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/github-contribution-grid-snake.svg)
  
 </div>
