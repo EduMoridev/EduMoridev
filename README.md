@@ -2,7 +2,7 @@
 
 - 🔭 Atualmente faço apenas freelancing
 - 🌱 Aperfeiçoando meu TypeScript em Next.Js
-- 👯 Trabalhando atualmente em um projeto de tcc que no momento esta privado
+- 📖cursando egenharia de software
 - 📫 Pode me contatar pelo email: @edu.mori@hotmail.com
 - 😄 Pronouns: ele/dele
 
