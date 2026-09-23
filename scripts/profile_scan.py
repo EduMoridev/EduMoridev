@@ -70,8 +70,13 @@ def http_get(url, token=None):
 def load_avatar(path):
     if path:
         return Image.open(path)
-    data = http_get(f"https://github.com/{USERNAME}.png?size=256")
-    return Image.open(io.BytesIO(data))
+    try:
+        data = http_get(f"https://github.com/{USERNAME}.png?size=256")
+        return Image.open(io.BytesIO(data))
+    except Exception as e:
+        # Não derruba o workflow inteiro por causa do avatar: usa um gradiente no lugar.
+        print(f"::warning::avatar não baixou ({e}); usando imagem de fallback")
+        return Image.radial_gradient("L").resize((256, 256))
 
 
 def fetch_repos():
