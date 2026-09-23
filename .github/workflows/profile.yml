@@ -23,6 +23,15 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Precisa rodar ANTES da cobrinha: o Snake roda em Docker como root e,
+      # se criar a pasta dist/ primeiro, o Python não tem permissão de escrever nela.
+      - name: Profile scan
+        run: |
+          pip install pillow
+          python scripts/profile_scan.py --out dist/profile-scan.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Snake
         uses: Platane/snk@v3
         with:
@@ -30,13 +39,6 @@ jobs:
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
-
-      - name: Profile scan
-        run: |
-          pip install pillow
-          python scripts/profile_scan.py --out dist/profile-scan.svg
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to output branch
         uses: crazy-max/ghaction-github-pages@v4
