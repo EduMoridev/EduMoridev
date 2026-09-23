@@ -83,29 +83,32 @@ Aplicação que recebe os dados informados pelo usuário e calcula o resultado e
 
 ## Stack
 
-Uso no dia a dia
+### Front-end
 
 <p>
   <img src="https://skillicons.dev/icons?i=nextjs,ts,react,tailwind,js,html,css&theme=dark" alt="Next.js, TypeScript, React, Tailwind, JavaScript, HTML e CSS"/>
 </p>
 
-Back-end
+### Back-end
 
 <p>
   <img src="https://skillicons.dev/icons?i=java,spring,nodejs&theme=dark" alt="Java, Spring e Node.js"/>
 </p>
 
-Ferramentas
+### Ferramentas
 
 <p>
-  <img src="https://skillicons.dev/icons?i=git,github,vercel,figma&theme=dark" alt="Git, GitHub, Vercel e Figma"/>
+  <img src="https://skillicons.dev/icons?i=git,github,docker,maven,vercel,figma&theme=dark" alt="Git, GitHub, Docker, Maven, Vercel e Figma"/>
 </p>
 
-<details>
-<summary>Também já usei em projetos da faculdade e trabalhos pontuais</summary>
-<br>
-<img src="https://skillicons.dev/icons?i=python,cs,docker,c,cpp&theme=dark" alt="Python, C#, Docker, C e C++"/>
-</details>
+<p>
+  <img src="https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor"/>
+  <img src="https://img.shields.io/badge/Antigravity-24292F?style=for-the-badge" alt="Antigravity"/>
+  <img src="https://img.shields.io/badge/Apidog-24292F?style=for-the-badge" alt="Apidog"/>
+  <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=miro&logoColor=white" alt="Miro"/>
+  <img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white" alt="Trello"/>
+  <img src="https://img.shields.io/badge/Metodologia%20%C3%A1gil-2EA043?style=for-the-badge" alt="Metodologia ágil"/>
+</p>
 
 ## Atividade
 
