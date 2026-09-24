@@ -24,7 +24,7 @@
 
 ## Sobre
 
-Sou co-founder e desenvolvedor front-end da Kronos, uma startup que está criando um software para unificar plataformas de agendamento. Trabalho principalmente com Next.js e TypeScript e, quando o projeto precisa, também desenvolvo no back-end com Java e Spring Boot.
+Sou co-founder e desenvolvedor front-end da Kronos, uma startup que está criando um software para unificar plataformas de agendamento. Trabalho principalmente com Next.js e TypeScript e, quando o projeto precisa, também ajudo no back-end com Java e Spring Boot.
 
 Fora da Kronos, faço landing pages e sites institucionais como freelancer, cuidando do layout até o deploy na Vercel. Estou cursando Engenharia de Software.
 
