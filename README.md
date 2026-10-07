@@ -1,45 +1,15 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/profile-scan.svg" width="100%" alt="Profile scan: Eduardo Morishita, desenvolvedor front-end e co-founder da Kronos"/>
-</p>
+<p align="center"><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/profile-scan.svg" width="100%" alt="Profile scan: Eduardo Morishita"/></p>
 
 <p align="center">
-  <a href="https://github.com/EduMoridev">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=58A6FF&center=true&vCenter=true&width=620&lines=Co-founder+e+Front-end+Dev+na+Kronos;Next.js+%2B+TypeScript+no+front;Java+%2B+Spring+Boot+no+back;Aberto+a+vagas+j%C3%BAnior+%28CLT+ou+PJ%29" alt="Co-founder e Front-end Dev na Kronos"/>
-  </a>
+  <a href="https://www.linkedin.com/in/eduardo-silva-morishita-268a89316/"><img src="https://img.shields.io/badge/LinkedIn-0A1A17?style=for-the-badge&logo=linkedin&logoColor=2DD4BF" alt="LinkedIn"/></a>
+  <a href="mailto:edu.mori@hotmail.com"><img src="https://img.shields.io/badge/Email-0A1A17?style=for-the-badge&logo=gmail&logoColor=2DD4BF" alt="Email"/></a>
 </p>
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/eduardo-silva-morishita-268a89316/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:edu.mori@hotmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
-  <img src="https://img.shields.io/badge/Status-Aberto%20a%20oportunidades-2EA043?style=for-the-badge" alt="Aberto a oportunidades"/>
-</p>
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/title-sobre.svg" width="100%" alt="Sobre"/></p>
 
-<p align="center">
-  <a href="#sobre">Sobre</a> •
-  <a href="#projetos-em-destaque">Projetos</a> •
-  <a href="#stack">Stack</a> •
-  <a href="#atividade">Atividade</a> •
-  <a href="#contato">Contato</a>
-</p>
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/about.svg" width="100%" alt="Sou co-founder e desenvolvedor front-end da Kronos, uma startup que está criando um software para unificar plataformas de agendamento. Trabalho principalmente com Next.js e TypeScript e, quando o projeto precisa, também desenvolvo no back-end com Java e Spring Boot. Fora da Kronos, faço landing pages e sites institucionais como freelancer, cuidando do layout até o deploy na Vercel. Estou cursando Engenharia de Software."/></p>
 
-## Sobre
-
-Sou co-founder e desenvolvedor front-end da Kronos, uma startup que está criando um software para unificar plataformas de agendamento. Trabalho principalmente com Next.js e TypeScript e, quando o projeto precisa, também ajudo no back-end com Java e Spring Boot.
-
-Fora da Kronos, faço landing pages e sites institucionais como freelancer, cuidando do layout até o deploy na Vercel. Estou cursando Engenharia de Software.
-
-```ts
-const edu = {
-  role: "Front-end Developer",
-  company: "Kronos (co-founder)",
-  focus: ["Next.js", "TypeScript", "React", "Tailwind"],
-  alsoWorksWith: ["Java", "Spring Boot", "REST APIs"],
-  studying: "Engenharia de Software",
-  lookingFor: "Vaga júnior (CLT ou PJ)",
-};
-```
-
-## Projetos em destaque
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/title-projetos.svg" width="100%" alt="Projetos"/></p>
 
 Clique no nome de um projeto para ver os detalhes.
 
@@ -81,54 +51,19 @@ Aplicação que recebe os dados informados pelo usuário e calcula o resultado e
 🔗 [Repositório](https://github.com/EduMoridev/CalculadoraPenalFronteira)
 </details>
 
-## Stack
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/title-stack.svg" width="100%" alt="Stack"/></p>
 
-### Front-end
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/stack.svg" width="100%" alt="Stack: front-end, back-end e ferramentas"/></p>
 
-<p>
-  <img src="https://skillicons.dev/icons?i=nextjs,ts,react,tailwind,js,html,css&theme=dark" alt="Next.js, TypeScript, React, Tailwind, JavaScript, HTML e CSS"/>
-</p>
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/title-atividade.svg" width="100%" alt="Atividade"/></p>
 
-### Back-end
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/activity.svg" width="100%" alt="Atividade de contribuições no último ano"/></p>
 
-<p>
-  <img src="https://skillicons.dev/icons?i=java,spring,nodejs&theme=dark" alt="Java, Spring e Node.js"/>
-</p>
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/title-contato.svg" width="100%" alt="Contato"/></p>
 
-### Ferramentas
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/contact.svg" width="100%" alt="Estou disponível para vagas de desenvolvedor front-end júnior, CLT ou PJ. Me chame no LinkedIn ou por e-mail: edu.mori@hotmail.com"/></p>
 
 <p>
-  <img src="https://skillicons.dev/icons?i=git,github,docker,maven,vercel,figma&theme=dark" alt="Git, GitHub, Docker, Maven, Vercel e Figma"/>
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor"/>
-  <img src="https://img.shields.io/badge/Antigravity-24292F?style=for-the-badge" alt="Antigravity"/>
-  <img src="https://img.shields.io/badge/Apidog-24292F?style=for-the-badge" alt="Apidog"/>
-  <img src="https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=miro&logoColor=white" alt="Miro"/>
-  <img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white" alt="Trello"/>
-  <img src="https://img.shields.io/badge/Metodologia%20%C3%A1gil-2EA043?style=for-the-badge" alt="Metodologia ágil"/>
-</p>
-
-## Atividade
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/github-snake.svg" />
-    <img alt="Cobra percorrendo o gráfico de contribuições" src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/github-snake-dark.svg" />
-  </picture>
-</p>
-
-## Contato
-
-Estou disponível para vagas de desenvolvedor front-end júnior, em regime CLT ou PJ. Você me encontra pelo LinkedIn ou por e-mail.
-
-<p>
-  <a href="https://www.linkedin.com/in/eduardo-silva-morishita-268a89316/"><img src="https://img.shields.io/badge/-Conectar%20no%20LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:edu.mori@hotmail.com"><img src="https://img.shields.io/badge/-edu.mori@hotmail.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="edu.mori@hotmail.com"/></a>
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:58A6FF,50:1F6FEB,100:0D1117&height=110&section=footer" width="100%" alt=""/>
+  <a href="https://www.linkedin.com/in/eduardo-silva-morishita-268a89316/"><img src="https://img.shields.io/badge/Conectar%20no%20LinkedIn-0A1A17?style=for-the-badge&logo=linkedin&logoColor=2DD4BF" alt="LinkedIn"/></a>
+  <a href="mailto:edu.mori@hotmail.com"><img src="https://img.shields.io/badge/edu.mori@hotmail.com-0A1A17?style=for-the-badge&logo=gmail&logoColor=2DD4BF" alt="edu.mori@hotmail.com"/></a>
 </p>
