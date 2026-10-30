@@ -53,7 +53,7 @@ Aplicação que recebe os dados informados pelo usuário e calcula o resultado e
 
 <p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/title-stack.svg" width="100%" alt="Stack"/></p>
 
-<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/stack.svg" width="100%" alt="Stack: front-end, back-end e ferramentas"/></p>
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/stack.svg" width="100%" alt="Stack: front-end, back-end, IDEs e ferramentas"/></p>
 
 <p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/title-atividade.svg" width="100%" alt="Atividade"/></p>
 
