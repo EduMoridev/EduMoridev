@@ -61,7 +61,7 @@ Aplicação que recebe os dados informados pelo usuário e calcula o resultado e
 
 <p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/title-contato.svg" width="100%" alt="Contato"/></p>
 
-<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/contact.svg" width="100%" alt="Estou disponível para vagas de desenvolvedor front-end júnior, CLT ou PJ. Me chame no LinkedIn ou por e-mail: edu.mori@hotmail.com"/></p>
+<p><img src="https://raw.githubusercontent.com/EduMoridev/EduMoridev/output/contact.svg" width="100%" alt="Estou disponível para vagas de desenvolvedor ou engenheiro de software júnior, CLT ou PJ. Me chame no LinkedIn ou por e-mail: edu.mori@hotmail.com"/></p>
 
 <p>
   <a href="https://www.linkedin.com/in/eduardo-silva-morishita-268a89316/"><img src="https://img.shields.io/badge/Conectar%20no%20LinkedIn-0A1A17?style=for-the-badge&logo=linkedin&logoColor=2DD4BF" alt="LinkedIn"/></a>
