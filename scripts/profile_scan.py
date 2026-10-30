@@ -5,7 +5,7 @@ Arquivos gerados em --outdir (padrão: dist/):
   header.svg          nome grande em matriz de caracteres
   card.svg            cartão com avatar, nome, cargo e tecnologias
   profile-scan.svg    avatar em ASCII + painel SYSTEM.INFO
-  stack.svg           tecnologias separadas em front, back e ferramentas
+  stack.svg           tecnologias separadas em front, back, IDEs e ferramentas
   activity.svg        gráfico de contribuições do último ano
   title-*.svg         títulos das seções
 
@@ -21,7 +21,6 @@ import json
 import os
 import re
 import urllib.request
-from datetime import date
 from xml.sax.saxutils import escape
 
 from PIL import Image, ImageEnhance, ImageOps
@@ -36,10 +35,23 @@ CARD_PILLS = ["Next.js", "TypeScript", "React", "Spring Boot"]
 
 STACK = [
     ("FRONT-END", ["Next.js", "TypeScript", "React", "Tailwind CSS", "JavaScript", "HTML", "CSS"]),
-    ("BACK-END", ["Java", "Spring Boot", "Node.js"]),
-    ("FERRAMENTAS", ["Git", "GitHub", "Docker", "Maven", "Vercel", "Figma", "Cursor",
-                     "Antigravity", "Apidog", "Miro", "Trello", "Metodologia ágil"]),
+    ("BACK-END", ["Java", "Spring Boot", "Node.js", "API REST"]),
+    ("IDEs", ["VS Code", "Visual Studio", "IntelliJ IDEA", "PyCharm", "Cursor", "Antigravity"]),
+    ("FERRAMENTAS", ["Git", "GitHub", "GitHub Actions", "Docker", "Maven", "Vercel",
+                     "Figma", "Apidog", "Miro", "Trello", "Metodologia ágil"]),
 ]
+
+# Candidatos a entrar na lista acima. Só adicione o que você sabe explicar numa
+# entrevista: o recrutador técnico abre justamente o que está em destaque.
+#
+# BACK-END   PostgreSQL, MySQL, JPA, Hibernate, JWT, Spring Security
+#            (banco de dados é a maior lacuna da lista hoje: a Kronos guarda
+#            agendamentos em algum lugar, e isso é a primeira pergunta de
+#            quem contrata para back-end)
+# TESTES     JUnit, Jest, Vitest, Testing Library
+#            (poucos juniores escrevem teste; quem escreve se destaca)
+# FERRAMENTAS  Linux, Postman, Insomnia, Scrum, Kanban
+#            ("Scrum" ou "Kanban" diz mais que "Metodologia ágil")
 
 # Painel SYSTEM.INFO do scan. "{repos}" vem da API do GitHub.
 INFO = [
@@ -407,118 +419,4 @@ def build_activity(grid, total):
             filt = ' filter="url(#softglow)"' if lvl >= 2 else ""
             cells.append(f'<rect x="{x:.0f}" y="{y:.0f}" width="{cell}" height="{cell}" rx="2.5" fill="{colors[lvl]}" opacity="0"{filt}>{anim}</rect>')
     legend = "".join(f'<rect x="{W - 128 + i * 15}" y="59" width="11" height="11" rx="2" fill="{c}"/>' for i, c in enumerate(colors))
-    sub = f"{total} contribuições no último ano" if (SHOW_CONTRIBUTION_COUNT and total) else "último ano no GitHub"
-    body = frame(h) + f"""
-<text x="36" y="52" fill="#f0fdfa" font-family="{SANS}" font-size="22" font-weight="800" filter="url(#softglow)">Contribution Activity</text>
-<text x="36" y="72" fill="{ACCENT}" font-family="{SANS}" font-size="13" font-weight="600">{escape(sub)}</text>
-<text x="{W - 134}" y="68" text-anchor="end" fill="{MUTED}" font-family="{MONO}" font-size="10">menos</text>{legend}
-<text x="{W - 46}" y="68" fill="{MUTED}" font-family="{MONO}" font-size="10">mais</text>
-{''.join(cells)}
-<rect width="{W}" height="{h}" rx="16" fill="url(#crt)"/>"""
-    return svg(h, body, "Atividade de contribuições")
-
-
-def build_scan(avatar, repos):
-    H = 470
-    LX, LY, LW, LH = 28, 64, 372, 382
-    RX, RY, RW, RH = 416, 64, 436, 382
-    SCAN, START, STEP = 2.6, 2.8, 0.32
-
-    img = ImageOps.fit(avatar.convert("L"), (GRID, GRID))
-    img = ImageEnhance.Contrast(ImageOps.autocontrast(img, cutoff=2)).enhance(1.3)
-    if INVERT:
-        img = ImageOps.invert(img)
-    px = img.load()
-    c, r2 = (GRID - 1) / 2, (GRID / 2) ** 2
-    matrix = [[px[x, y] / 255 if (x - c) ** 2 + (y - c) ** 2 <= r2 else None for x in range(GRID)] for y in range(GRID)]
-
-    size = 330
-    ax, ay = LX + (LW - size) / 2, LY + 38
-    cell = size / GRID
-    if MODE == "ascii":
-        ramp, out = " .:-=+*#%@", []
-        for yi, row in enumerate(matrix):
-            spans, cur, buf = [], None, ""
-            for v in row:
-                ch_, lvl = (" ", 0) if v is None else (ramp[min(9, int(v * 10))], min(3, int(v * 4)))
-                if lvl != cur and buf:
-                    spans.append((cur, buf)); buf = ""
-                cur, buf = lvl, buf + ch_
-            spans.append((cur, buf))
-            inner = "".join(f'<tspan fill-opacity="{0.35 + 0.22 * l:.2f}">{escape(t)}</tspan>' for l, t in spans)
-            out.append(f'<text x="{ax}" y="{ay + (yi + 0.85) * cell:.1f}" textLength="{size}" lengthAdjust="spacingAndGlyphs" '
-                       f'xml:space="preserve" font-size="{cell * 1.15:.1f}">{inner}</text>')
-        art = f'<g fill="{ACCENT}" font-family="{MONO}">{"".join(out)}</g>'
-    else:
-        art = f'<g fill="{ACCENT}">' + "".join(
-            f'<rect x="{ax + xi * cell:.1f}" y="{ay + yi * cell:.1f}" width="{cell * .86:.1f}" height="{cell * .86:.1f}" fill-opacity="{.15 + .85 * v:.2f}"/>'
-            for yi, row in enumerate(matrix) for xi, v in enumerate(row) if v is not None and v >= .08) + "</g>"
-
-    rows, clips = [], []
-    lx, vx, y0, rh = RX + 22, RX + 150, RY + 64, 34
-    for i, (label, value) in enumerate(INFO):
-        value = value.replace("{repos}", repos)
-        y, t = y0 + i * rh, START + i * STEP
-        clips.append(f'<clipPath id="v{i}"><rect x="{vx}" y="{y - 14}" height="20" width="0">'
-                     f'<animate attributeName="width" from="0" to="{len(value) * 7.4 + 12:.0f}" begin="{t + .12:.2f}s" dur="0.45s" fill="freeze"/></rect></clipPath>')
-        rows.append(f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="{t:.2f}s" dur="0.2s" fill="freeze"/>'
-                    f'<text x="{lx}" y="{y}" fill="{MUTED}" font-size="12.5">{escape(label)}</text>'
-                    f'<text x="{vx}" y="{y}" fill="{TEXT}" font-size="12.5" clip-path="url(#v{i})">{escape(value)}</text>'
-                    f'<line x1="{lx}" y1="{y + 11}" x2="{RX + RW - 22}" y2="{y + 11}" stroke="{ACCENT}" stroke-opacity="0.08"/></g>')
-    end_t = START + len(INFO) * STEP + .4
-    cy = y0 + len(INFO) * rh - 4
-    cursor = (f'<rect x="{lx}" y="{cy - 12}" width="8" height="15" fill="{ACCENT}" opacity="0">'
-              f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.5;0.51;1" dur="1s" begin="{end_t:.2f}s" repeatCount="indefinite"/></rect>')
-
-    body = frame(H, f"{USERNAME.lower()}@github ~ $ ./profile-scan --live", live=True) + f"""
-<defs>
-  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{ACCENT}" stop-opacity="0"/>
-    <stop offset="0.85" stop-color="{ACCENT}" stop-opacity="0.35"/><stop offset="1" stop-color="#fff" stop-opacity="0.9"/></linearGradient>
-  <clipPath id="reveal"><rect x="{LX}" y="{ay}" width="{LW}" height="0"><animate attributeName="height" from="0" to="{size + 4}" dur="{SCAN}s" fill="freeze"/></rect></clipPath>
-  {''.join(clips)}
-</defs>
-<rect x="{LX}" y="{LY}" width="{LW}" height="{LH}" rx="10" fill="{PANEL}" stroke="{ACCENT}" stroke-opacity="0.35"/>
-<text x="{LX + 16}" y="{LY + 22}" fill="{MUTED}" font-family="{MONO}" font-size="11" letter-spacing="2">VISUAL.MAP</text>
-<g clip-path="url(#reveal)">{art}</g>
-<rect x="{LX + 4}" y="{ay - 26}" width="{LW - 8}" height="28" fill="url(#beam)" opacity="0">
-  <animate attributeName="y" values="{ay - 26};{ay + size - 26}" dur="{SCAN}s" fill="freeze"/>
-  <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.9;1" dur="{SCAN}s" fill="freeze"/></rect>
-<rect x="{LX + 4}" y="{ay}" width="{LW - 8}" height="2" fill="{ACCENT}" opacity="0">
-  <animate attributeName="y" values="{ay};{ay + size}" dur="4s" begin="{SCAN + 1}s" repeatCount="indefinite"/>
-  <animate attributeName="opacity" values="0;0.5;0.5;0" keyTimes="0;0.05;0.9;1" dur="4s" begin="{SCAN + 1}s" repeatCount="indefinite"/></rect>
-<rect x="{RX}" y="{RY}" width="{RW}" height="{RH}" rx="10" fill="{PANEL}" stroke="{ACCENT}" stroke-opacity="0.35"/>
-<text x="{RX + 16}" y="{RY + 22}" fill="{MUTED}" font-family="{MONO}" font-size="11" letter-spacing="2">SYSTEM.INFO</text>
-<text x="{RX + RW - 16}" y="{RY + 22}" text-anchor="end" fill="{ACCENT}" font-family="{MONO}" font-size="11">● LIVE</text>
-<g font-family="{MONO}">{''.join(rows)}{cursor}</g>
-<rect width="{W}" height="{H}" rx="16" fill="url(#crt)"/>"""
-    return svg(H, body, f"Profile scan de {NAME}")
-
-
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--outdir", default="dist")
-    ap.add_argument("--avatar", help="imagem local, para testar sem internet")
-    args = ap.parse_args()
-    os.makedirs(args.outdir, exist_ok=True)
-
-    avatar = load_avatar(args.avatar)
-    grid, total = fetch_contributions()
-    files = {
-        "header.svg": build_header(),
-        "card.svg": build_card(avatar),
-        "profile-scan.svg": build_scan(avatar, fetch_repos()),
-        "stack.svg": build_stack(),
-        "activity.svg": build_activity(grid, total),
-    }
-    for name, (command, lines) in TYPED.items():
-        files[name] = build_typed(command, lines)
-    for t in SECTION_TITLES:
-        files[f"title-{t.lower()}.svg"] = build_title(t)
-    for name, content in files.items():
-        with open(os.path.join(args.outdir, name), "w", encoding="utf-8") as f:
-            f.write(content)
-        print(f"ok -> {name} ({len(content) // 1024} KB)")
-
-
-if __name__ == "__main__":
-    main()
+    sub = f"{total} contribuições no último ano" if
