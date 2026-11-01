@@ -59,7 +59,7 @@ INFO = [
     ("Handle",    "@EduMoridev"),
     ("Role",      "Front-end Dev | Co-founder"),
     ("Company",   "Kronos"),
-    ("Stack",     "Next.js · TypeScript · Spring"),
+    ("Stack",     "Next.js · Java · C#"),
     ("Education", "Eng. de Software"),
     ("Repos",     "{repos} public"),
     ("Status",    "Open to work · Junior"),
