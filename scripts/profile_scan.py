@@ -89,7 +89,7 @@ TYPED = {
     "contact.svg": (
         "./contato --disponibilidade",
         [
-            "Estou disponível para vagas de desenvolvedor front-end júnior, CLT ou PJ.",
+            "Estou disponível para vagas de desenvolvedor ou engenheiro de software júnior, CLT ou PJ.",
             "Me chame no LinkedIn ou por e-mail: edu.mori@hotmail.com",
         ],
     ),
